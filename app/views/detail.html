@@ -1,0 +1,79 @@
+<div class="container">
+	<div class="row">
+	<div class="ShowPageTitle" class="col-xs-4"><h2 class="text-center"> 「揪」ＬＩＫＥ 一 起 運 動 -  {{saveDetails.name}} 詳 細 資 訊 </h2></div>
+	</div>
+	<div class="starter-template">"
+		<div class="detail-img">
+			<!--ImagePhoto -->			
+			  <div>
+			    <carousel interval="myInterval">
+			      <slide ng-repeat="slide in slides" active="slide.active">
+			        <img ng-src="{{slide.image}}">
+			        <div class="carousel-caption">
+			          <h4>Slide {{$index}}</h4>
+			          <p>{{slide.text}}</p>
+			        </div>
+			      </slide>
+			    </carousel>
+			</div>
+			<!--ImagePhoto -->
+		</div>
+		<div class="detail-img Textcneter">
+			<h1 class="text-center">{{saveDetails.name}}</h1>
+			<h4 class="text-left">所在地：{{saveDetails.address}}</h4>
+			<h4 class="text-left">聯絡電話：{{saveDetails.phone}}</h4>
+			<h4 class="text-left">開放時間：{{saveDetails.time}}</h4>
+			<h3 class="text-center">資訊地圖</h3>
+		</div>
+
+		<!-- 發送揪團 -->
+			<div id="addGroupForm" class="lead sample-show-hide" ng-show="addGroupSport">
+				<p><button class="btn btn-default btn-lg" ng-click="addGroupFn()" role="button">關閉視窗</button></p>
+				<h1 class="text-info">填寫審核後即可發佈</h1><br />
+				<!-- input -->
+				<div class="row">
+				  <div class="addGroupInput col-xs-4">
+				    <input type="text" class="form-control" value="{{myId}} - {{myName}}" placeholder="發起人">
+				  </div>
+				  <div class="addGroupInput col-xs-4">
+				    <input type="text" class="form-control" value="{{saveDetails.name}}" placeholder="{{saveDetails.name}}">
+				  </div>
+				  <div class="addGroupInput col-xs-4">
+				    <input type="date" class="form-control" placeholder="時間">
+				  </div>
+				  <br /><br />
+				  <div class="addGroupInput col-xs-4">
+				    <input type="email" class="form-control" value="{{myMail}}" placeholder="Email「做為審核項目之一」">
+				  </div>
+				  <div class="addGroupInput col-xs-4">
+				    <input type="text" class="form-control" value="" placeholder="集合時間">
+				  </div>
+				  <br /><br />	
+				  <div class="addGroupInput col-xs-12">
+				    <input type="text" ng-model="myContent" class="form-control" placeholder="補充內容：上限150字">
+				  </div>
+				</div><br />
+
+				<p><button class="btn btn-info btn-lg" role="button" ng-click="sendPost();">申請揪團</button></p>
+				
+				<!-- 注意事項 -->
+				<div class=>
+					<p class="text-danger">揪團注意事項</p>
+					<div class="text-left">
+						<p><h4>[1] 揪團發起人需在前兩天發起 ex:發起5/1號之活動請在4/29,30完成申請。</p>
+						<p><h4>[2] 每日人工審核時間為清晨00:00 ~ 02:00。</h4></p>
+						<p><h4>[3] 請勿發起對於運動場所沒有任何相關之活動內容。</h4></p>
+						<p><h4>[4] 此網站提供由臺南市政府所提供之開放資料。</h4></p>
+						<p><h4>[5] 網路揪團有一定風險，請慎重考慮後在前往參與</h4></p>
+					</div>
+				</div>
+				<!-- 注意事項 -->
+
+			</div>
+		<!-- 發送揪團 -->
+		<div class="text-center">
+			<button class="btn btn-success btn-lg" ng-click="addGroupFn()" ng-model="addGroupSport" role="button">發起揪團</button>
+			<button class="btn btn-success btn-lg" role="button">查看歷史揪團資料</button>
+		</div>
+	</div>
+</div><!-- /.container -->

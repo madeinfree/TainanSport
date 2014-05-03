@@ -1,0 +1,25 @@
+<div class="container">
+<div class="ShowPageTitle"><h2 class="text-center"> 「揪」ＬＩＫＥ 一 起 運 動 - 揪 團 清 單 </h2></div>
+  <table class="table table-hover" style="background-color:white;">
+    <tbody>
+      <tr>
+        <td class="text-center">活動代號</td>
+        <td class="text-center">運動地點</td>
+        <td class="text-center">運動發起人</td>
+        <td class="text-center">聯絡資訊</td>
+        <td class="text-center">集合時間</td>
+        <td class="text-center">備註</td>
+        <td class="text-center"></td>
+      </tr>
+      <tr ng-repeat="datas in nowDatas | orderByPriority | orderBy:'name'" ng-show="datas.Audit==1">
+        <td class="text-center">[{{$index + 1}}] {{ datas.uuid.substring(0,10) }}</td>
+        <td class="text-center">{{datas.name}}</td>
+        <td class="text-center">{{datas.myName}}</td>
+        <td class="text-center">{{datas.Mail}}</td>
+        <td class="text-center"></td>
+        <td class="text-center">{{datas.content}}</td>
+        <td class="text-center"><button class="btn btn-success btn-xs">加入揪團</button></td>
+      </tr>
+    </tbody>
+  </table>  
+</div>

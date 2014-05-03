@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SportApp">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="lib/_css/bootstrap/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="app/css/main.css">
+	<title>「揪」 ＬＩＫＥ 運 動 </title>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="MainCtrl">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> 「揪」 ＬＩＫＥ 運 動  </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+      	<li><a href="#">運動場清單</a></li>
+      	<li><a href="#/nowSport">揪團清單</a></li>
+        <li><a href="#">我的揪團</a></li>
+        <li><a class="btn" style="border: 0px;" ng-click="loginFB();" ng-show="!connect">Login with FaceBook</a></li>
+        <li><a class="btn" style="border: 0px;" ng-click="logoutFB();" ng-show="connect">Logout with FaceBook</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="mailto:sal95610@gmail.com">聯絡我</a></li>
+        <li><a href="https://www.facebook.com/haowei.liou" target="_blank">©Copyright Designed by Whien</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="fb-root"></div>
+<div ng-view></div>
+
+<!-- AngularJS -->
+<script src="lib/_js/angular.min.js"></script>
+<script src="lib/_js/angular-easyfb-0.3.0/angular-easyfb.min.js"></script>
+<script src="lib/_js/angular-route.min.js"></script>
+<!-- AngularJS firebase -->
+<script src="https://cdn.firebase.com/js/client/1.0.11/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+
+<script src="lib/_js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+<script src="lib/_js/service/datas_service.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script src="app/js/app.js"></script>
+</body>
+</html>
